@@ -86,8 +86,8 @@ namespace OpenUtau.Plugin.Builtin {
             var attr1 = note.phonemeAttributes?.FirstOrDefault(attr => attr.index == 1) ?? default;
 
             if (prevNeighbour == null) {
-                // Use "- V" or "- CV" if present in voicebank
-                var initial = $"- {currentLyric}";
+                // Use "-V" or "-CV" if present in voicebank
+                var initial = $"-{currentLyric}";
                 if (singer.TryGetMappedOto(initial, note.tone + attr0.toneShift, attr0.voiceColor, out var oto)) {
                     currentLyric = oto.Alias;
                 }
